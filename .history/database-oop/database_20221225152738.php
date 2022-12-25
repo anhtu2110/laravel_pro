@@ -95,7 +95,7 @@ class DB
         if ($this->query($sql) == TRUE) {
             echo "Xóa dữ liệu thành công";
         } else {
-            echo "Lỗi: " . $this->conn->error;
+            echo "Lỗi: " . $this->error;
         }
     }
 }

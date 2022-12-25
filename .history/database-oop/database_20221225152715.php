@@ -95,7 +95,7 @@ class DB
         if ($this->query($sql) == TRUE) {
             echo "Xóa dữ liệu thành công";
         } else {
-            echo "Lỗi: " . $this->conn->error;
+            echo "Lỗi: " . $this->error;
         }
     }
 }
@@ -105,7 +105,7 @@ $data = array(
     'password' => md5('thehoan!@#'),
 );
 $db = new DB;
-// echo $db->insert('tbl_user', $data);
+echo $db->insert('tbl_user', $data);
 // $field = array('username', 'password');
 // $data = $a->get('tbl_user', array('username', 'password'), 'id = 5');
 // function show_array($data)
@@ -122,4 +122,4 @@ $db = new DB;
 //     'password' => md5('tranviethoang'),
 // );
 // echo $a->update('tbl_user', $set, 'id = 4');
-$db->delete("tbl_user", "`id` = 4");
+// $db->delete("tbl_user", "`id` = 1");

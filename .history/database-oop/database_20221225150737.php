@@ -87,27 +87,16 @@ class DB
             echo "Lỗi: " . $this->conn->error;
         }
     }
-
-    function delete($table, $where = "")
-    {
-        $where = !empty($where) ? "WHERE {$where}" : "";
-        $sql = "DELETE FROM `{$table}` {$where}";
-        if ($this->query($sql) == TRUE) {
-            echo "Xóa dữ liệu thành công";
-        } else {
-            echo "Lỗi: " . $this->conn->error;
-        }
-    }
 }
 
 $data = array(
-    'username' => 'Đỗ Phủ',
-    'password' => md5('thehoan!@#'),
+    'username' => 'Mai Hòa Hiệp',
+    'password' => md5('hoahiep!@#'),
 );
-$db = new DB;
-// echo $db->insert('tbl_user', $data);
+$a = new DB;
+echo $a->insert('tbl_users', $data);
 // $field = array('username', 'password');
-// $data = $a->get('tbl_user', array('username', 'password'), 'id = 5');
+// $data = $a->get('tbl_users', array('username', 'password'), 'id = 5');
 // function show_array($data)
 // {
 //     if (is_array($data)) {
@@ -116,10 +105,9 @@ $db = new DB;
 //         echo "</pre>";
 //     }
 // }
-// show_array($data);
+show_array($data);
 // $set = array(
 //     'username' => 'Trần Việt Hoàng',
 //     'password' => md5('tranviethoang'),
 // );
-// echo $a->update('tbl_user', $set, 'id = 4');
-$db->delete("tbl_user", "`id` = 4");
+// echo $a->update('tbl_users', $set, 'id = 4');

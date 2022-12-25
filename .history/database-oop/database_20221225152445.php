@@ -93,19 +93,19 @@ class DB
         $where = !empty($where) ? "WHERE {$where}" : "";
         $sql = "DELETE FROM `{$table}` {$where}";
         if ($this->query($sql) == TRUE) {
-            echo "Xóa dữ liệu thành công";
+            return 1;
         } else {
-            echo "Lỗi: " . $this->conn->error;
+            echo "Lỗi: " . $this->error;
         }
     }
 }
 
 $data = array(
-    'username' => 'Đỗ Phủ',
+    'username' => 'Đỗ Thế Hoàn',
     'password' => md5('thehoan!@#'),
 );
 $db = new DB;
-// echo $db->insert('tbl_user', $data);
+// echo $a->insert('tbl_user', $data);
 // $field = array('username', 'password');
 // $data = $a->get('tbl_user', array('username', 'password'), 'id = 5');
 // function show_array($data)
@@ -122,4 +122,4 @@ $db = new DB;
 //     'password' => md5('tranviethoang'),
 // );
 // echo $a->update('tbl_user', $set, 'id = 4');
-$db->delete("tbl_user", "`id` = 4");
+$db->delete("tbl_user", "`id` = 1");
