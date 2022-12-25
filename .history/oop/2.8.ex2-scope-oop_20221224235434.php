@@ -1,0 +1,25 @@
+<?php
+
+use User as GlobalUser;
+
+class Demo
+{
+    public $attr_1;
+    private $attr_2 = 20;
+    protected $attr_3 = 60;
+    public function show()
+    {
+        return $this->attr_2;
+    }
+}
+
+class User extends Demo
+{
+    function __construct()
+    {
+        echo $this->attr_2;
+    }
+}
+
+$u = new User;
+echo $u->attr_3;
